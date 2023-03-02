@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@163.com",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "email": "dasha@163.com",
+      "password": "dasha"
+    },
+    {
+      "id": 3,
+      "email": "wangxiao@163.com",
+      "password": "wangxiao"
+    },
+    {
+      "id": 4,
+      "email": "ysy@163.com",
+      "password": "ysy"
+    },
+    {
+      "id": 5,
+      "email": "zhaotian@163.com",
+      "password": "zhaotian"
+    },
+    {
+      "email": "gaoqiang@163.com",
+      "password": "gaoqiang",
+      "id": 6
+    },
+    {
+      "email": "zhangsi@163.com",
+      "password": "zhangsi",
+      "id": 7
+    },
+    {
+      "email": "zhaosi@163.com",
+      "password": "zhaosi",
+      "id": 8
+    },
+    {
+      "email": "zhaotian@163.com",
+      "password": "zhaotian",
+      "id": 9
+    },
+    {
+      "email": "wangxiao@163.com",
+      "password": "wangxiao",
+      "id": 10
+    }
+  ]
+}
