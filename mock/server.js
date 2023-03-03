@@ -20,10 +20,11 @@ server.post('/login', (req, res, next) => {
             if (users[i].email === req.body.email && users[i].password === req.body.password) {
                 isLogin = true;
                 email = users[i].email;
+                head = users[i].head;
             }
         }
         if (isLogin) {
-            res.send({ code: 0, email })
+            res.send({ code: 0, email, head })
         } else {
             res.send({ code: -1 })
         }

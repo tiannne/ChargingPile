@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>交易管理</h2>
+        <h2></h2>
         <RouterView />
     </div>
 </template>

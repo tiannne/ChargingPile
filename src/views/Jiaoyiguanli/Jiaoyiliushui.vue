@@ -1,15 +1,22 @@
 <template>
-    <div>
-        <h2>交易流水</h2>
+    <div class="chongzhi">
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+
+}
 </script>
 
 <style lang="scss" scoped>
-
+.chongzhi{
+    background: url(../../../public/jiaoyiliushui.jpg)no-repeat;
+    background-size: 1300px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+}
 </style>

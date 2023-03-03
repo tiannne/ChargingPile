@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h2>充电记录</h2>
+    <div class="chongzhi">
     </div>
 </template>
 
@@ -11,5 +10,13 @@
 </script>
 
 <style lang="scss" scoped>
-
+.chongzhi{
+    background: url(../../../public/chongzhijilu.jpg)no-repeat;
+    background-size: 1300px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+}
 </style>

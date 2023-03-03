@@ -17,10 +17,10 @@
 
     <div id="main" style="width: 600px;height:400px;margin-left: 300px;"></div>
 
-    <el-table :data="tableData" border style="width: 70%">
+    <el-table :data="tableData" border style="width: 68%">
         <el-table-column fixed prop="id" label="序号" width="60">
         </el-table-column>
-        <el-table-column fixed prop="tjsj" label="统计日期" width="150">
+        <el-table-column fixed prop="tjsj" label="统计日期" width="200">
         </el-table-column>
         <el-table-column prop="cdl" label="充电量" width="150">
         </el-table-column>
@@ -28,7 +28,7 @@
         </el-table-column>
         <el-table-column prop="cdje" label="充电金额" width="150">
         </el-table-column>
-        <el-table-column prop="khs" label="客户数" width="150">
+        <el-table-column prop="khs" label="客户数" width="180">
         </el-table-column>
 
     </el-table>
@@ -101,8 +101,7 @@ export default {
                      zhzye: "￥200"
                  } */
             ],
-            value1: '',
-            value2: ''
+            value1: ''
         }
     },
 

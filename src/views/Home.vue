@@ -3,7 +3,7 @@
       <el-col :span="8" style="margin-top: 20px;">
          <el-card shadow="hover">
             <div class="user">
-               <img src="../../public/JJLIN.png" alt="">
+               <img :src="href" alt="">
                <div class="userinfo">
                   <p class="name">{{ name }}</p>
                   <p class="role">管理员</p>
@@ -52,6 +52,7 @@ export default defineComponent({
    setup() {
       let tableData = ref([]);
       let countData = ref([]);
+      let href = ref(window.localStorage.getItem('head'));
       const tableLabel = {
          name: "站点名称",
          todayMA: "今日维护",
@@ -61,14 +62,14 @@ export default defineComponent({
       const getTableList = async () => {
          await axios.get('home/getData').then((res) => {
             /* 打印一下res看是否生效 */
-            console.log(res)
+            //console.log(res)
             tableData.value = res.data.data.tableData
          })
       };
       const getCountData = async () => {
          await axios.get('home/getCountData').then((res) => {
             /* 打印一下res看是否生效 */
-            console.log(res)
+           // console.log(res)
             countData.value = res.data.data.cardData
          })
       }
@@ -82,6 +83,7 @@ export default defineComponent({
             tableData,
             tableLabel,
             countData,
+            href
          };
       }
 
@@ -98,7 +100,7 @@ export default defineComponent({
                url: '../../../public/a (2).jpg'
             }
          ],
-         name: window.localStorage.getItem('Email'),
+         name: window.localStorage.getItem('Email')
       };
    },
    methods: {

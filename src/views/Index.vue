@@ -6,7 +6,7 @@
                     <el-icon style="font-size: 30px; margin-right: 20px; height: 50px; position: absolute;left: 50px;">
                         <Platform />
                     </el-icon>
-                    大连市充电桩维护管理系统
+                    大连市充电桩维护管理系统V1.0
                 </h2>
                 <div class="user-head">
                     <el-space>

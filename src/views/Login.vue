@@ -10,6 +10,8 @@
             <el-input placeholder="请填写密码" type="password" v-model="password" @blur="sendPassword" />
           </el-form-item>
 
+          <!-- <img :src="head" alt=""> -->
+
           <el-row>
             <el-checkbox class="checkBox" v-model="isAgree" label="同意用户使用准则" name="type" />
           </el-row>
@@ -22,13 +24,13 @@
       <el-tab-pane label="注册">
         <el-form label-position="right" label-width="100px" style="max-width: 460px" class="loginForm">
           <el-form-item label="邮箱：">
-            <el-input v-model="rEmail" placeholder="请填写邮箱地址" @blur="sendEmailZC"/>
+            <el-input v-model="rEmail" placeholder="请填写邮箱地址" @blur="sendEmailZC" />
           </el-form-item>
           <el-form-item label="密码：">
-            <el-input type="password" v-model="rPassword" placeholder="请填写密码" @blur="sendPasswordZC"/>
+            <el-input type="password" v-model="rPassword" placeholder="请填写密码" @blur="sendPasswordZC" />
           </el-form-item>
           <el-form-item label="确认密码：">
-            <el-input type="password" v-model="confirmPassword" @blur="confirmFunc" placeholder="请确认密码"/>
+            <el-input type="password" v-model="confirmPassword" @blur="confirmFunc" placeholder="请确认密码" />
           </el-form-item>
           <el-row>
             <el-checkbox class="checkBox" v-model="rAgree" label="同意用户使用准则" name="type" />
@@ -42,16 +44,16 @@
   </div>
 </template>
 <script>
-import { reactive, toRefs } from "@vue/reactivity";
+import { reactive, toRefs  } from "vue";
 import { ElMessage } from "element-plus";
-import  http  from "../utils/http.js";
-import  { useRouter }  from "vue-router"
+import http from "../utils/http.js";
+import { useRouter } from "vue-router"
 export default {
   setup() {
 
     const router = useRouter();
 
-    const form = reactive({
+    let form = reactive({
       Email: "",
       password: "",
       isAgree: 0,
@@ -64,8 +66,18 @@ export default {
       rAgree: 0,
     });
 
+    // onMounted(() => {
+    //   http.get("users").then((res)=>{
+    //     let result = res.data.find((v)=>{
+    //       return v.email === form.Email
+    //     })
+    //     console.log(result);
+        
+    //   })
+      
+    // })
 
-    
+
 
     // 方法
     // 登录
@@ -73,32 +85,35 @@ export default {
       //console.log(form);
       http.post('login', {
         email: form.Email,
-        password: form.password
+        password: form.password,
+        //head: form.head
       }).then(res => {
-        if(res.data.code === 0){
+
+        if (res.data.code === 0) {
           ElMessage.success('登录成功');
           window.localStorage.setItem('Email', form.Email);
+          window.localStorage.setItem('head', res.data.head);
           router.push('/index')
           form.Email = '';
           form.password = '';
-        }else{
+        } else {
           ElMessage.error('邮箱或密码不正确,请您重新输入');
         }
       })
     }
     // 注册
     function register() {
-      http.post('users',{
+      http.post('users', {
         email: registerForm.rEmail,
         password: registerForm.rPassword
-      }).then(res =>{
+      }).then(res => {
         //console.log(res.status)
-        if(res.status === 201){
+        if (res.status === 201) {
           ElMessage.success('注册成功');
           registerForm.rEmail = '';
           registerForm.rPassword = '';
           registerForm.confirmPassword = '';
-        }else{
+        } else {
           ElMessage.error('该用户已存在,请重新输入');
         }
       })
@@ -126,7 +141,7 @@ export default {
     function sendPassword() {
       if (form.password === '') {
         ElMessage.error('请输入密码');
-      } 
+      }
     }
 
     //注册时前端邮箱校验
@@ -139,12 +154,12 @@ export default {
         ElMessage.error('请输入邮箱');
       }
     }
-    
+
     //注册时前端邮箱校验
     function sendPasswordZC() {
       if (registerForm.rPassword === '') {
         ElMessage.error('请输入密码');
-      } 
+      }
     }
 
 
@@ -153,7 +168,7 @@ export default {
     //     alert("密码与确认密码不一致");
     // }
 
-    
+
     // 确认密码
     const confirmFunc = () => {
       if (registerForm.confirmPassword !== registerForm.rPassword)
@@ -169,7 +184,7 @@ export default {
       sendEmail,
       sendPassword,
       sendEmailZC,
-      sendPasswordZC
+      sendPasswordZC,
     };
   },
 };
