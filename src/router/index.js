@@ -10,7 +10,7 @@ const Chongdianzhuang = () => import('../views/Zhandianguanli/Chongdianzhuang.vu
 const Chongdzhandian = () => import('../views/Zhandianguanli/Chongdzhandian.vue')
 const Chongzhijilu = () => import('../views/Jiaoyiguanli/Chongzhijilu.vue')
 const Jiaoyiliushui = () => import('../views/Jiaoyiguanli/Jiaoyiliushui.vue')
-const Nenghaofenxi = () => import('../views/Tongjifenxi/Nenghaofenxi.vue')
+const Caiwubaobiao = () => import('../views/Tongjifenxi/Caiwubaobiao.vue')
 const Yunyingqingk = () => import('../views/Tongjifenxi/Yunyingqingk.vue')
 const Home = () => import('../views/Home.vue')
 
@@ -88,12 +88,12 @@ const router = createRouter({
           },
           children: [
             {
-              path: 'nenghaofenxi',
-              name: 'nenghaofenxi',
-              component: Nenghaofenxi,
+              path: 'caiwubaobiao',
+              name: 'caiwubaobiao',
+              component: Caiwubaobiao,
               meta:{
                 breadcrumb:[
-                  '首页','能耗分析'
+                  '首页','财务报表'
                 ]
               }
             },

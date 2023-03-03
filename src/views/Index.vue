@@ -59,7 +59,7 @@
                                 </el-icon>
                                 <span>统计分析</span>
                             </template>
-                            <el-menu-item index="/Tongjifenxi/nenghaofenxi">能耗分析</el-menu-item>
+                            <el-menu-item index="/Tongjifenxi/caiwubaobiao">财务报表</el-menu-item>
                             <el-menu-item index="/Tongjifenxi/yunyingqingk">运营情况</el-menu-item>
                         </el-sub-menu>
                         <el-sub-menu index="/zhandianguanli">
