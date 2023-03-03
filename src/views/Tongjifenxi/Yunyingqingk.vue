@@ -1,8 +1,5 @@
 <template>
-    <el-breadcrumb separator="/">
-        <el-breadcrumb-item>统计分析</el-breadcrumb-item>
-        <el-breadcrumb-item>运营情况</el-breadcrumb-item>
-    </el-breadcrumb>
+   
 
     <!-- <div class="block">
         <span class="demonstration">统计日期&nbsp;&nbsp;</span>

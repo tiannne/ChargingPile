@@ -57,15 +57,41 @@ export default {
 
         }
     },
-    computed: {
-        selectData() {
-            if (this.form.name) {
-                return this.tableData.filter((value) => {
-                    console.log(this.form.name);
-                    return value.includes(this.form.name);
-                });
-            } else {
-                return this.tableData;
+    // methods: {
+    //     selectData() {
+    //         console.log(this.form.tableData);
+    //         /* return this.tableData.filter((value) => {
+    //             return value.name.indexOf(this.keywords) !==-1 ;
+    //         }); */
+    //         let _selectData = this.car.toLowerCase();
+    //         let newListData = [];
+    //         if (_selectData) {
+    //             this.tableData.filter((item) => {
+    //                 if (item.name.toLowerCase().indexOf(_search) !== -1) {
+    //                     newListData.push(item);
+    //                 }
+    //             })
+    //         }
+    //         this.tableData = newListData;
+    //     }
+    // },
+    methods:{
+        selectData(){
+            console.log(this.form.name);
+            if(this.form.name === '人民广场'){
+                this.tableData = this.tableData.filter(v=>{
+                    return v.address === '大连中山区人民广场'
+                })
+            }
+            else if(this.form.name === '华南广场'){
+                this.tableData = this.tableData.filter(v=>{
+                    return v.address === '大连甘井子区华南广场'
+                })
+            }
+            else if(this.form.name === '马栏广场'){
+                this.tableData = this.tableData.filter(v=>{
+                    return v.address === '大连沙河口区马栏广场'
+                })
             }
         }
     },

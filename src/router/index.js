@@ -24,11 +24,7 @@ const router = createRouter({
       name: 'index',
       component: Index,
       redirect:'/home',
-      meta:{
-        breadcrumb:[
-          '首页'
-        ]
-      },
+      
       children:[
         {
           path: '/home',

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h2>统计分析</h2>
         <RouterView />
     </div>
 </template>

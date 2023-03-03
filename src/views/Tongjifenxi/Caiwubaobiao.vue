@@ -1,9 +1,5 @@
 <template>
-    <el-breadcrumb separator="/">
-        <el-breadcrumb-item>统计分析</el-breadcrumb-item>
-        <el-breadcrumb-item>财务报表</el-breadcrumb-item>
-    </el-breadcrumb>
-
+    
 
     <div class="block">
         <span class="demonstration">时间&nbsp;&nbsp;&nbsp;</span>
